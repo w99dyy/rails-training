@@ -1,0 +1,36 @@
+body {
+    margin: 20px;
+    background-color: rgb(105, 156, 105);
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.avatar {
+    border-radius: 20px;
+    
+    width: 150px;
+}
+
+.card {
+    
+    background-color: rgb(55, 87, 57);
+    padding: 20px;
+    justify-content: space-around;
+    display: flex;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+        text-align: center;
+
+
+}
+.desc {
+
+    color: white;
+    
+}
+
+
+.border {
+                border-bottom: 6px solid #bdda54;
+
+}
