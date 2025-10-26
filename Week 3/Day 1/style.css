@@ -1,0 +1,50 @@
+body {
+text-align: center;
+background-image: url("subway.jpg");
+background-size: cover;
+color: white;
+}
+
+#increment-btn {
+    border: none;
+    background-color: darkred;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    padding: 5px 17px 5px 17px;
+    font-weight: 700px;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+
+    
+}
+
+#increment-btn:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05); 
+}
+
+#increment-btn:active {
+  transform: scale(0.95); 
+}
+
+#save-btn {
+  border: none;
+  background-color: darkred;
+  color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    padding: 5px 17px 5px 17px;
+    font-weight: 700px;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+#save-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+#save-btn:active {
+  transform: scale(0.95);
+}
