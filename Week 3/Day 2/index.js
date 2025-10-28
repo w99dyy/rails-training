@@ -6,20 +6,37 @@ let age = 22
 let isAlive = true
 let message = ""
 
-if (sum < 21) {
-    message = "Do you want to draw a new card?"
+
+function startGame() {
+
+    if (sum < 21) {
+        message = "Do you want to draw a new card?"
+    
+    }
+            else if (sum === 21) {
+                message = "Wohoo! You've got Blackjack!"
+                hasBlackJack = true
+    
+            }
+    
+            else  {
+                message = "Aughh too bad you've lost!"
+                isAlive = false
+            }
+    
 
 }
-        else if (sum === 21) {
-            message = "Wohoo! You've got Blackjack!"
-            hasBlackJack = true
 
-        }
 
-        else  {
-            message = "Aughh too bad you've lost!"
-            isAlive = false
-        }
+
+
+
+
+
+
+
+
+
 
 
 console.log(message)
