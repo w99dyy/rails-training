@@ -18,7 +18,7 @@ h1 {
 font-style: italic;    
 }
 
-#btn {
+button {
     color: #016f32;
     width: 150px;
     background-color: goldenrod;
@@ -27,4 +27,6 @@ font-style: italic;
     font-weight: bold;
     border: none;
     border-radius: 2px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
