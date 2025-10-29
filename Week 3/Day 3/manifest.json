@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Page Bookmark",
+    "action": {
+        "default_icon": "icon.webp",
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "tabs"
+    ]
+
+}
