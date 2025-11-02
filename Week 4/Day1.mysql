@@ -1,0 +1,40 @@
+######### Revising the Select Query I ###########
+
+        SELECT ID, NAME, COUNTRYCODE, DISTRICT, POPULATION
+        FROM CITY
+        WHERE COUNTRYCODE = 'USA'
+        AND POPULATION > 100000;
+
+
+########### Revising the Select Query II ############
+
+        SELECT NAME
+        FROM city
+        WHERE COUNTRYCODE = 'USA'
+        AND POPULATION > 120000;
+
+
+################# Select All ##############
+
+        SELECT *
+        FROM city;
+
+
+############### Select By ID #############
+
+        SELECT * 
+        FROM city
+        WHERE ID = 1661;
+
+
+########### Japanese Cities' Attributes ##########
+
+        SELECT *
+        FROM CITY
+        WHERE COUNTRYCODE ='JPN';
+
+######### Weather Observation Station 1 #########
+
+
+        SELECT CITY, STATE
+        FROM STATION;
