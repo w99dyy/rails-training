@@ -1,0 +1,184 @@
+####################### SQL - MANIPULATION ##################
+       ============ SQL MUST END WITH ; ==========
+
+    // A column \\
+
+        is a set of data values of a particular type. Here,
+                                    id, name, and age are the columns.
+
+    // A row \\ 
+
+        is a single record in a table. The first row in the celebs table has: \\
+
+        An id of 1
+        A name of Justin Bieber
+        An age of 29
+        All data stored in a relational database is of a certain data type
+
+        
+    // Some of the most common data types are: \\
+
+        INTEGER, a positive or negative whole number
+        TEXT, a text string
+        DATE, the date formatted as YYYY-MM-DD
+        REAL, a decimal value
+
+
+    // (id INTEGER, name TEXT, age INTEGER) is a list of parameters defining each column, or attribute in the table and its 
+        data type: \\
+
+        id is the first column in the table.
+             It stores values of data type INTEGER
+        name is the second column in the table. 
+            It stores values of data type TEXT
+        age is the third column in the table. 
+            It stores values of data type INTEGER
+
+
+    // SELECT \\
+
+        SELECT statements are used to fetch data from a database. In the statement below, 
+            SELECT returns all data in the name column of the celebs table
+                SELECT name FROM celebs;
+
+
+            You can also query data from all columns in a table with SELECT.
+                 SELECT * FROM celebs;
+
+
+    // Alter \\
+
+        The ALTER TABLE statement adds a new column to a table. 
+            You can use this command when you want to add columns to a table.
+             
+                    ALTER TABLE table_name
+                    ADD COLUMN column DATA_TYPE;
+
+    // UPDATE \\
+
+        The UPDATE statement edits a row in a table. 
+            You can use the UPDATE statement when you want to change existing records.
+                EX:
+                    UPDATE celebs 
+                    SET twitter_handle = '@taylorswift13' 
+                    WHERE id = 4; 
+
+                                    1. 
+                    UPDATE is a clause that edits a row in the table.
+                    2. celebs is the name of the table.
+                    3. SET is a clause that indicates the column to edit.
+
+                        twitter_handle is the name of the column that is going to be updated
+                        @taylorswift13 is the new value that is going to be inserted into the twitter_handle column.
+                        4. WHERE is a clause that indicates which row(s) to update with the new column value.
+                        Here the row with a 4 in the id column is the row that will have the twitter_handle updated to @taylorswift13.
+
+    // Delete \\
+
+    The DELETE FROM statement deletes one or more rows from a table.
+        You can use the statement when you want to delete existing records 
+                DELETE FROM celebs 
+
+                        WHERE twitter_handle IS NULL;
+
+
+                        DELETE FROM
+                        Preview: Docs Removes existing row(s) from a table. If a WHERE statement is excluded, all rows in the table will be deleted.
+                        is a clause that lets you delete rows from a table.
+                        celebs is the name of the table we want to delete rows from.
+                        WHERE
+                        Preview: Docs Loading link description
+                        is a clause that lets you select which rows you want to delete. Here we want to delete all of the rows where the twitter_handle column IS NULL.
+                        IS NULL is a condition in SQL that returns true when the value is NULL and false otherwise.        
+
+
+
+                        // RECAP \\
+
+                            CREATE TABLE
+                            Preview: Docs Creates a new table within a database.
+                            creates a new table.
+                            INSERT INTO
+                            Preview: Docs Adds new rows of data into a database table.
+                            adds a new row to a table.
+                            SELECT
+                            Preview: Docs Every SQL query will begin with the SELECT command to fetch data from one or more tables.
+                            queries data from a table.
+                            ALTER TABLE
+                            Preview: Docs Adds, deletes, modifies or changes the data type of a column in a table.
+                            changes an existing table.
+                            UPDATE
+                            Preview: Docs Loading link description
+                            edits a row in a table.
+                            DELETE FROM
+                            Preview: Docs Loading link description
+                            deletes rows from a table.
+                            Constraints
+                            Preview: Docs Constraints in SQL are the rules applied to the values of individual columns. They add information about how a column can be used after specifying the data type for a column. They can be used to tell the database to reject inserted data that does not adhere to a certain restriction. Here are some of the constraints that can be set: - PRIMARY KEY columns can be used to uniquely identify the row. Attempts to insert a row with an identical value to a row already in the table will result in a constraint violation which will not allow you to insert the new row. - UNIQUE columns have a different value for every row. This is similar to PRIMARY KEY except a table can have many different UNIQUE columns. - NOT NULL columns must have a value. Attempts to insert a row without a value for a NOT NULL column will result in a constraint violation and the new row will not be inserted. - DEFAULT columns take an additional argument that will be the assumed value for an inserted row if the new row does not specify a value for that column. Note: There can be only one PRIMARY KEY column per table, but there can be multiple UNIQUE columns.
+                            add information about how a column can be used.
+
+############################### QUERY ###############################
+
+        // As \\ 
+            Knowing how 
+            SELECT
+            Preview: Docs Loading link description
+            works, suppose we have the code below:
+
+            SELECT name AS 'Titles'
+            FROM movies;
+
+            Copy to Clipboard
+
+            Can you guess what AS does?
+
+            AS
+            Preview: Docs Loading link description
+            is a keyword in SQL that allows you to rename a column or table using an alias. The new name can be anything you want as long as you put it inside of single quotes. Here we renamed the name column as Titles
+
+
+            // Distinct \\
+                When we are examining data in a table,
+                 it can be helpful to know what distinct values exist in a particular column.
+                is used to return unique values in the output.
+                 It filters out all duplicate values in the specified column(s).
+
+                 https://www.codecademy.com/courses/learn-sql/lessons/queries/exercises/distinct
+
+
+
+        // Where \\
+            We can restrict our query results using the 
+            WHERE
+            Preview: Docs Filters records (rows) that match a certain condition.
+            clause in order to obtain only the information we want.
+
+
+            How does it work?
+
+                The WHERE clause filters the result set to only include rows where the following condition is true.
+
+                imdb_rating > 8 is the condition. Here, only rows with a value greater than 8 in the imdb_rating column will be returned.
+
+                The > is an operator. Operators create a condition that can be evaluated as either true or false.
+
+                Comparison operators used with the WHERE clause are:
+
+                = equal to
+                != not equal to
+                > greater than
+                < less than
+                >= greater than or equal to
+                <= less than or equal to
+
+
+                  // Like I \\
+                        LIKE
+                        Preview: Docs Loading link description
+                        can be a useful operator when you want to compare similar values.
+
+                        The movies table contains two films with similar titles, ‘Se7en’ and ‘Seven’.
+
+                        How could we select all movies that start with ‘Se’ and end with ‘en’ and have exactly one character in the middle?
+
+                        https://www.codecademy.com/courses/learn-sql/lessons/queries/exercises/like-i
