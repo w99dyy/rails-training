@@ -182,3 +182,14 @@
                         How could we select all movies that start with ‘Se’ and end with ‘en’ and have exactly one character in the middle?
 
                         https://www.codecademy.com/courses/learn-sql/lessons/queries/exercises/like-i
+
+
+
+            // aggregates \\
+
+                COUNT()
+                    : count the number of rows
+                    SUM() : the sum of the values in a column
+                    MAX()/ MIN() : the largest/smallest value
+                    AVG(): the average of the values in a column
+                    ROUND() : round the values in the column
